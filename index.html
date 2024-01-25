@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./src/output.css">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body class="h-screen flex flex-col items-center bg-secondaryCyan300 md:justify-center">
+
+  <!-- Card -->
+  <main class="relative bg-white rounded-t-2xl p-4 mt-20 md:rounded-2xl md:my-auto">
+    <h1 class="absolute w-full text-center -translate-x-4 tracking-[.2rem] text-secondaryCyan700 -top-16 md:-top-24">SPLI<br>TTER</h1>
+    <form id="form" class="flex flex-col md:flex-row gap-8" action="#">
+      <!-- Input section -->
+      <section class="max-w-[24rem] md:w-1/2 md:p-4">
+
+        <label for="bill" class="block text-xxs text-secondaryCyan700 pb-1">Bill</label>
+        <input class="bg-secondaryCyan100 w-full text-right px-3 rounded-sm mb-4 text-secondaryCyan900 placeholder-secondaryCyan500 bg-dollar bg-no-repeat bg-pos [&::-webkit-inner-spin-button]:appearance-none focus:outline-primaryCyan cursor-pointer md:mb-6" id="bill" type="number"
+          placeholder="0">
+
+        <fieldset class="pb-4">
+          <legend class="text-[.65rem] text-secondaryCyan700 pb-3">Select Tip %</legend>
+          <div class="grid grid-cols-2 gap-2 md:grid-cols-3">
+            <div class="w-full">
+              <input class="hidden peer" type="radio" name="tip" id="5" value="5">
+              <label
+                class="flex py-1 bg-secondaryCyan900 text-white justify-center rounded-sm peer-checked:bg-primaryCyan peer-checked:text-secondaryCyan900 cursor-pointer hover:bg-primaryCyan100 hover:text-secondaryCyan900"
+                for="5">5%</label>
+            </div>
+            <div>
+              <input class="hidden peer" type="radio" name="tip" id="10" value="10">
+              <label
+                class="flex py-1 justify-center bg-secondaryCyan900 text-white text-center rounded-sm peer-checked:bg-primaryCyan peer-checked:text-secondaryCyan900 cursor-pointer hover:bg-primaryCyan100 hover:text-secondaryCyan900"
+                for="10">10%</label>
+            </div>
+            <div>
+              <input class="hidden peer" type="radio" name="tip" id="15" value="15">
+              <label
+                class="flex py-1 justify-center bg-secondaryCyan900 text-white text-center rounded-sm peer-checked:bg-primaryCyan peer-checked:text-secondaryCyan900 cursor-pointer hover:bg-primaryCyan100 hover:text-secondaryCyan900"
+                for="15">15%</label>
+            </div>
+            <div>
+              <input class="hidden peer" type="radio" name="tip" id="25" value="25">
+              <label
+                class="flex py-1 justify-center bg-secondaryCyan900 text-white text-center rounded-sm peer-checked:bg-primaryCyan peer-checked:text-secondaryCyan900 cursor-pointer hover:bg-primaryCyan100 hover:text-secondaryCyan900"
+                for="25">25%</label>
+            </div>
+            <div>
+              <input class="hidden peer" type="radio" name="tip" id="50" value="50">
+              <label
+                class="flex py-1 justify-center bg-secondaryCyan900 text-white text-center rounded-sm peer-checked:bg-primaryCyan peer-checked:text-secondaryCyan900 cursor-pointer hover:bg-primaryCyan100 hover:text-secondaryCyan900"
+                for="50">50%</label>
+            </div>
+            <div>
+              <input id="custom" class="bg-secondaryCyan100 w-full py-1 px-3 text-right placeholder-secondaryCyan700 text-secondaryCyan900 [&::-webkit-inner-spin-button]:appearance-none focus:outline-primaryCyan cursor-pointer md:px-2" type="number" placeholder="Custom" min="1" max="100">
+            </div>
+
+          </div>
+        </fieldset>
+
+        <label class="text-xxs text-secondaryCyan700 pb-1" for="people">Number of People</label>
+        <input class="bg-secondaryCyan100 w-full rounded-sm placeholder-secondaryCyan500 text-right pr-3 mb-3 bg-person bg-no-repeat bg-pos [&::-webkit-inner-spin-button]:appearance-none focus:outline-primaryCyan cursor-pointer" placeholder="0" type="number" id="people">
+
+      </section>
+
+      <!-- Output section -->
+      <section class="bg-secondaryCyan900 rounded-md p-3 pt-6 md:p-6 md:flex md:flex-col md:w-1/2 md:pt-8">
+        <div class="flex justify-between items-center pb-4">
+          <p class="text-white text-xxs">Tip Amount <br> <span class="text-[.55rem] text-secondaryCyan500">/ person</span></p>
+          <p id="tip" class="text-primaryCyan md:text-3xl">$0.00</p>
+        </div>
+        <div class="flex justify-between items-center pb-4">
+          <p class="text-white text-xxs">Total<br> <span class="text-[.55rem] text-secondaryCyan500">/ person</span></p>
+          <p id="total" class="text-primaryCyan md:text-3xl w-[200]">$0.00</p>
+        </div>
+        <button id="reset" class="bg-primaryCyan w-full rounded-sm text-secondaryCyan900 py-1 hover:bg-primaryCyan100 md:mt-auto">RESET</button>
+      </section>
+    </form>
+  </main>
+
+
+  <div class="absolute attribution text-center bottom-0">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://twitter.com/tomsdev4">Thomas Schütz</a>.
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
